@@ -1,3 +1,3 @@
 export function consoleLog (text) {
-  console.log(text + 'tets')
+  console.log(text)
 }
