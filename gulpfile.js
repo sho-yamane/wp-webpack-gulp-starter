@@ -55,7 +55,7 @@ gulp.task('optimizeImage', () => {
 })
 
 // command
-gulp.task('default', ['sass', 'webpack', 'optimizeImage'], () => {})
+gulp.task('default', ['include', 'webpack', 'optimizeImage'], () => {})
 
 gulp.task('watch', () => {
   gulp.watch('./js/**/*', ['webpack'])
