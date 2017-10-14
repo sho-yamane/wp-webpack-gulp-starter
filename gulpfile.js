@@ -10,6 +10,7 @@ const cssnano = require('gulp-cssnano')
 const watch = require('gulp-watch')
 const notify = require('gulp-notify')
 const imagemin = require('gulp-imagemin')
+const fileInclude = require('gulp-file-include')
 
 // webpack.config.js
 const webpackConfig = require("./webpack.config")
@@ -30,7 +31,7 @@ gulp.task("webpack", () => {
 })
 
 gulp.task('sass', () => {
-  gulp.src('./scss/*.scss')
+  return gulp.src('./scss/*.scss')
     .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
     .pipe(sass())
     .pipe(autoprefixer())
@@ -39,6 +40,12 @@ gulp.task('sass', () => {
     .pipe(cssnano({discardComments: {removeAll: true}}))
     .pipe(gulp.dest('./dist/css'))
 })
+
+gulp.task('include', ['sass'], function() {
+  gulp.src('php/header.php')
+    .pipe(fileInclude())
+    .pipe(gulp.dest('./'))
+});
 
 gulp.task('optimizeImage', () => {
   return gulp.src(imagePath.src + '/**/*')
@@ -53,5 +60,6 @@ gulp.task('default', ['sass', 'webpack', 'optimizeImage'], () => {})
 gulp.task('watch', () => {
   gulp.watch('./js/**/*', ['webpack'])
   gulp.watch('./img/*', ['optimizeImage'])
-  gulp.watch('./scss/*.scss', ['sass'])
+  gulp.watch('./scss/**/*', ['include'])
+  gulp.watch('./php/*.php', ['include'])
 })

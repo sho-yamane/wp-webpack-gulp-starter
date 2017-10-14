@@ -27,8 +27,10 @@ module.exports = {
       }
     ],
   },
+  devtool: 'source-map',
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       compress: {
         drop_console: false
       },
