@@ -5,6 +5,8 @@ PHPファイルでは、jsとcssの読み込み設定、不要なコードのrem
 
 head内にインラインでcssを埋め込む仕様にしていますのでheader.phpは「php/header.php」を編集してください。
 
+Pjax遷移対応のため、jQueryとBarba.jsに依存しています。必要ない方は該当の箇所を削除してください。
+
 ## コマンド
 
 ```

@@ -31,5 +31,9 @@
     "gulp-watch": "^4.3.11",
     "webpack": "^3.7.1",
     "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "barba.js": "^1.0.0",
+    "jquery": "^3.2.1"
   }
 }

@@ -14,3 +14,15 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div id="barba-wrapper">
+	  <div class="barba-container">
+		<header class="header">
+			<nav>
+			    <?php wp_nav_menu( array(
+			        'theme_location'=>'primary',
+					'container'     =>'',
+					'menu_class'    =>'',
+					'items_wrap'    =>'<ul>%3$s</ul>'));
+			    ?>
+			</nav>
+		</header>

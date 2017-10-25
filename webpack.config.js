@@ -5,7 +5,7 @@ module.exports = {
   entry: './js/app.js',
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, 'dist/js')
+    path: path.join(__dirname, './dist/js')
   },
   module: {
     rules: [
@@ -35,5 +35,9 @@ module.exports = {
         drop_console: false
       },
     }),
-  ],
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery'
+    })
+  ]
 }
