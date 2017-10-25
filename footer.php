@@ -1,5 +1,5 @@
             <?php wp_footer(); ?>
-            <footer class="header">
+            <footer class="footer">
                 <nav>
                     <?php wp_nav_menu( array(
                         'theme_location'=>'secondary',
@@ -9,7 +9,7 @@
                     ?>
                 </nav>
             </footer>
-        </div>
-    </div>
+        </div><!--barba-container-->
+    </div><!--barba-wrapper-->
 </body>
 </html>
