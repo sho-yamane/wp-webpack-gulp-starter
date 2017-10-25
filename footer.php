@@ -1,4 +1,3 @@
-<?php wp_footer(); ?>
 <footer class="footer">
     <nav>
         <?php wp_nav_menu( array(
@@ -11,5 +10,6 @@
 </footer>
 </div><!--barba-container-->
 </div><!--barba-wrapper-->
+<?php wp_footer(); ?>
 </body>
 </html>
