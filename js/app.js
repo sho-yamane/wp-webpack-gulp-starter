@@ -13,6 +13,7 @@ $(document).ready(() => {
   consoleLog('文章引数')
 
   // Barba
+  $('#wpadminbar a').addClass('no-barba')
   barbaTransition()
   Barba.Pjax.start()
 
