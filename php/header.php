@@ -14,3 +14,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div id="barba-wrapper">
+	  <div class="barba-container">
+		<header class="header">
+			<nav>
+			    <?php wp_nav_menu( array(
+			        'theme_location'=>'primary',
+					'container'     =>'',
+					'menu_class'    =>'',
+					'items_wrap'    =>'<ul>%3$s</ul>'));
+			    ?>
+			</nav>
+		</header>
+		<?php if ( is_home() || is_front_page() ) : ?>
+			<div class="slider" id="js-slider">
+				<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
+				<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
+				<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
+			</div>
+		<?php endif; ?>

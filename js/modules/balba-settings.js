@@ -1,4 +1,6 @@
 import Barba from 'barba.js'
+import 'slick-carousel'
+import {Carousel} from './slick-settings'
 
 export function barbaTransition () {
   const FadeTransition = Barba.BaseTransition.extend({
@@ -25,6 +27,13 @@ export function barbaTransition () {
       $el.animate({opacity: 1}, 400, function () {
         _this.done()
       })
+
+      // 再実行（シェアボタンやアナリティクスなど）
+      if (window.location.pathname === '/') {
+        // トップページのみ
+        const carousel = new Carousel('#js-slider')
+        carousel.init()
+      }
     }
   })
 

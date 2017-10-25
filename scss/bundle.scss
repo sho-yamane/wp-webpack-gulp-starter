@@ -1,1 +1,8 @@
-@import "modules/main";
+// reset
+@import "./modules/ress.scss";
+
+// slick
+@import "../node_modules/slick-carousel/slick/slick.scss";
+
+// main
+@import "./modules/main.scss";

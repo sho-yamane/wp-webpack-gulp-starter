@@ -2,5 +2,8 @@
   "extends": "standard",
   "env": {
     "jquery": true
+  },
+  "globals": {
+    "window": true
   }
 }
