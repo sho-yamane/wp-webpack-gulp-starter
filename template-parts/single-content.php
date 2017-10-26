@@ -55,6 +55,8 @@
 				</div>
 			<?php endif ; ?>
 
+			<?php echo webpack_gulp_starter_share_buttons(); ?>
+
 		</footer>
 
 </article>

@@ -1,4 +1,5 @@
 <?php
+
 if ( ! function_exists( 'webpack_gulp_starter_scripts' ) ) {
 	function webpack_gulp_starter_scripts() {
 		$the_theme = wp_get_theme();

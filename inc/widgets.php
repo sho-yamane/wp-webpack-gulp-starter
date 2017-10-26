@@ -1,4 +1,5 @@
 <?php
+
 if ( ! function_exists( 'webpack_gulp_starter_widgets' ) ) {
 	function webpack_gulp_starter_widgets() {
 		register_nav_menus(
