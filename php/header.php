@@ -11,25 +11,29 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style>@@include('../dist/css/bundle.min.css')</style>
 	<?php wp_head(); ?>
+	<?php get_template_part( 'ogp' );?>
+	<?php get_template_part( 'favicon' );?>
+	<?php get_template_part( 'ga' );?>
 </head>
 
-<body <?php body_class(); ?>>
+<body>
 	<div id="barba-wrapper">
-	  <div class="barba-container">
-		<header class="header">
-			<nav>
-			    <?php wp_nav_menu( array(
-			        'theme_location'=>'primary',
-					'container'     =>'',
-					'menu_class'    =>'',
-					'items_wrap'    =>'<ul>%3$s</ul>'));
-			    ?>
-			</nav>
-		</header>
-		<?php if ( is_home() || is_front_page() ) : ?>
-			<div class="slider" id="js-slider">
-				<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
-				<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
-				<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
-			</div>
-		<?php endif; ?>
+	  	<div class="barba-container">
+			<div id="page" <?php body_class(); ?>>
+				<header class="header">
+					<nav>
+				    	<?php wp_nav_menu( array(
+				        	'theme_location'=>'primary',
+							'container'     =>'',
+							'menu_class'    =>'',
+							'items_wrap'    =>'<ul>%3$s</ul>'));
+				    	?>
+					</nav>
+				</header>
+				<?php if ( is_home() || is_front_page() ) : ?>
+					<div class="slider" id="js-slider">
+						<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
+						<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
+						<div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/sample.jpg"></div>
+					</div>
+				<?php endif; ?>

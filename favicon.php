@@ -1,0 +1,1 @@
+<?php // https://realfavicongenerator.net/ ?>

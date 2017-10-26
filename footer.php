@@ -8,6 +8,7 @@
         ?>
     </nav>
 </footer>
+</div>
 </div><!--barba-container-->
 </div><!--barba-wrapper-->
 <?php wp_footer(); ?>
