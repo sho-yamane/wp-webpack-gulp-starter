@@ -1,1 +1,1 @@
-<?php /* Script here!! */ ?>
+<?php /* Script here!! */

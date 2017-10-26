@@ -1,1 +1,1 @@
-<?php // https://realfavicongenerator.net/ ?>
+<?php // https://realfavicongenerator.net/
