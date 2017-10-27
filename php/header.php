@@ -21,7 +21,12 @@
 		  <div class="barba-container">
 			<div id="page" <?php body_class(); ?>>
 				<header class="header">
-					<nav>
+					<button class="hamburger" id="js-hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+					<nav id="js-nav">
 						<?php
 						wp_nav_menu(
 							array(

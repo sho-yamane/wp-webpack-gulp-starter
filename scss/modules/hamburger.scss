@@ -1,0 +1,72 @@
+/*****************************************************
+settings
+*****************************************************/
+$width: 2.56rem;
+$height: 1.6rem;
+$background_color: #000;
+$background_color_active: #999;
+$line_height: 2px;
+$radius: 2px;
+
+/*****************************************************
+scss
+*****************************************************/
+.hamburger {
+  width: $width;
+  height: $height;
+  position: fixed;
+  z-index: 1;
+  top: 3rem;
+  right: 3rem;
+  cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
+  span {
+    display: block;
+    background: $background_color;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $line_height;
+    transition: all 0.4s ease-out;
+    border-radius: $radius;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:nth-child(3) {
+      bottom: 0;
+    }
+  }
+  &:hover {
+    span {
+      &:nth-child(1) {
+
+      }
+      &:nth-child(2) {
+
+      }
+      &:nth-child(3) {
+
+      }
+    }
+  }
+  &.is-active {
+    span {
+      background: $background_color_active;
+      &:nth-child(1) {
+        transform: translateY(12px) rotate(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-12px) rotate(45deg);
+      }
+    }
+  }
+}
