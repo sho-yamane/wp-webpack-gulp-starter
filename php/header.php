@@ -11,9 +11,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<style>@@include('../dist/css/bundle.min.css')</style>
 	<?php wp_head(); ?>
-	<?php get_template_part( 'ogp' ); ?>
-	<?php get_template_part( 'favicon' ); ?>
-	<?php get_template_part( 'ga' ); ?>
+	<?php get_template_part( 'inc-head/ogp' ); ?>
+	<?php get_template_part( 'inc-head/favicon' ); ?>
+	<?php get_template_part( 'inc-head/ga' ); ?>
 </head>
 
 <body>

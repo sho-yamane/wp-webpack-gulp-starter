@@ -3,8 +3,8 @@ import Barba from 'barba.js'
 import 'slick-carousel'
 
 // custom_modules
-import {Carousel} from '../modules/slick-settings'
-import {cleanUp} from '../modules/balba-head-cleanup'
+import {Carousel} from '../../modules/slick-settings'
+import {cleanUp} from '../../modules/balba/balba-head-cleanup'
 
 export function barbaDispatcherNewPageReady () {
   Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container, newPageRawHTML) {

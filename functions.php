@@ -1,8 +1,8 @@
 <?php
 
-require get_template_directory() . '/inc/enqueue.php';
-require get_template_directory() . '/inc/widgets.php';
-require get_template_directory() . '/inc/widget-new-post.php';
-require get_template_directory() . '/inc/remove.php';
-require get_template_directory() . '/inc/support.php';
-require get_template_directory() . '/inc/share.php';
+require get_template_directory() . '/inc-functions/enqueue.php';
+require get_template_directory() . '/inc-functions/widgets.php';
+require get_template_directory() . '/inc-functions/widget-new-post.php';
+require get_template_directory() . '/inc-functions/remove.php';
+require get_template_directory() . '/inc-functions/support.php';
+require get_template_directory() . '/inc-functions/share.php';
