@@ -3,10 +3,8 @@ const gulp = require("gulp")
 const webpackStream = require("webpack-stream")
 const webpack = require("webpack")
 const sass = require('gulp-sass')
-const autoprefixer = require('gulp-autoprefixer')
+const pleeease = require('gulp-pleeease')
 const plumber = require('gulp-plumber')
-const rename = require('gulp-rename')
-const cssnano = require('gulp-cssnano')
 const watch = require('gulp-watch')
 const notify = require('gulp-notify')
 const imagemin = require('gulp-imagemin')
@@ -33,11 +31,16 @@ gulp.task("webpack", () => {
 gulp.task('sass', () => {
   return gulp.src('./scss/*.scss')
     .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('./dist/css'))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cssnano({discardComments: {removeAll: true}}))
+    .pipe(sass({
+      outputStyle: 'expanded'
+    }))
+    .pipe(pleeease({
+      rem: {rootValue: '10px'},
+      mqpacker: true,
+      minifier: {preserveHacks: true, removeAllComments: true},
+      autoprefixer: ['last 2 version', 'ie >= 11', 'iOS >= 8.1', 'Android >= 4.3'],
+      out: 'bundle.min.css',
+    }))
     .pipe(gulp.dest('./dist/css'))
 })
 
@@ -51,7 +54,7 @@ gulp.task('optimizeImage', () => {
   return gulp.src(imagePath.src + '/**/*')
     .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
     .pipe(imagemin())
-    .pipe(gulp.dest(imagePath.dist));
+    .pipe(gulp.dest(imagePath.dist))
 })
 
 // command
